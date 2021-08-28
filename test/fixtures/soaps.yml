@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyText
+  objective: MyText
+  assessment: MyText
+  plan: MyText
+  notes: MyText
+  my_client: one
+
+two:
+  subject: MyText
+  objective: MyText
+  assessment: MyText
+  plan: MyText
+  notes: MyText
+  my_client: two
