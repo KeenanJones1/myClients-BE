@@ -3,7 +3,7 @@ require 'authorization.rb'
 class AuthController < ApplicationController
   def create
     auth_object = Authentication.new(login_params)
-    user = User.find_by(email: params['email'])
+    user = User.find_by(email: params['auth']['email'])
     if auth_object.authenticate
       render json: {
         message: "Login successful!", token: auth_object.generate_token, email: user.email}, status: :ok

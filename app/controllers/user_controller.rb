@@ -1,5 +1,6 @@
+require "json_web_token.rb"
+
 class UserController < ApplicationController
- require "json_web_token.rb"
  def show
   user = User.find(params["id"])
   if user
