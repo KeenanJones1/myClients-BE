@@ -3,13 +3,13 @@ require 'authorization.rb'
 class AuthController < ApplicationController
   def create
     auth_object = Authentication.new(login_params)
-    user = User.find_by(license_number: params['license_number'])
+    user = User.find_by(email: params['email'])
     if auth_object.authenticate
       render json: {
-        message: "Login successful!", token: auth_object.generate_token, license_number: user.license_number}, status: :ok
+        message: "Login successful!", token: auth_object.generate_token, email: user.email}, status: :ok
     else
       render json: {
-        message: "Incorrect license_number/password combination"}, status: :unauthorized
+        message: "Incorrect email/password combination"}, status: :unauthorized
     end
   end
 
@@ -26,6 +26,6 @@ class AuthController < ApplicationController
 
   private 
   def login_params
-    params.require(:auth).permit(:license_number, :password)
+    params.require(:auth).permit(:password, :email)
   end
 end

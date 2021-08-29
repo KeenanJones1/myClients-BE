@@ -3,7 +3,7 @@ MyClient.destroy_all
 Client.destroy_all
 User.destroy_all
 
-user = User.create(first_name: 'Keenan', last_name: 'Jones', password: '12334455', license_number: '4210f14', bio: 'Writing this seed')
+user = User.create(first_name: 'Keenan', last_name: 'Jones', password: '12334455', license_number: '4210f14', bio: 'Writing this seed', email: 'kjones@gmail.com')
 
 client = Client.create(first_name: 'Kuzco', last_name: 'Jones', occupation: 'Desk-Worker', gender: 'M', date_of_birth: Date.new(2001,2,3), address: 'here S. Pesa, KY', phone_number: '443-554-1112')
 
