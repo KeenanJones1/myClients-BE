@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2021_08_29_135927) do
   create_table "my_clients", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "client_id", null: false
-    t.float "coolness_rating"
-    t.float "tipped"
-    t.float "likelihood_to_return"
-    t.integer "visits"
+    t.float "coolness_rating", default: 2.0
+    t.float "tipped", default: 5.0
+    t.float "likelihood_to_return", default: 1.0
+    t.integer "visits", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_my_clients_on_client_id"
@@ -58,10 +58,10 @@ ActiveRecord::Schema.define(version: 2021_08_29_135927) do
     t.string "last_name"
     t.string "password_digest"
     t.string "license_number"
-    t.string "email"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
   end
 
   add_foreign_key "my_clients", "clients"
