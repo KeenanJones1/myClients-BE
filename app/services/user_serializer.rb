@@ -7,9 +7,9 @@ class UserSerializer
   @user.to_json(:only => [:first_name, :last_name, :email, :license_number, :bio], :include => {:my_clients => {:only => [:coolness_rating, :visits, :created_at, :updated_at], :include => {:client => {:only => [:first_name, :last_name, :gender]}}}})
  end
 
- def reading_list_serialized_json
+ def serialize_my_client
   byebug
-  @user.to_json(:only => [:first_name, :last_name, :email, :license_number, :bio], :include => {:my_clients => {:only => [:coolness_rating, :visits, :created_at, :updated_at], :include => {:client => {:only => [:first_name, :last_name, :gender]}}}})
+  @user.to_json(:include => {:my_clients => {:only => [:coolness_rating, :visits, :created_at, :updated_at], :include => {:client => {:only => [:first_name, :last_name, :gender]}}}})
  end
 
 
