@@ -9,10 +9,4 @@ client = Client.create(first_name: 'Kuzco', last_name: 'Jones', occupation: 'Des
 
 my_client = MyClient.create(user: user, client: client, coolness_rating: 4.0, tipped: 5.00, likelihood_to_return: 5.6, visits: 2)
 
-soap_note = Soap.create(my_client: my_client, subject: 'Working, taking care of business', objective: 'Kicking names and taking ass', assessment: 'This guy is a asshole', plan: 'Add money to douche jar', notes: "He's cool!!!")
-
-# t.text "subject"
-# t.text "objective"
-# t.text "assessment"
-# t.text "plan"
-# t.text "notes"
+soap_note = Soap.create(my_client: my_client, subject: 'Working, taking care of business', objective: 'Kicking names and taking ass', assessment: 'This guy is an asshole', plan: 'Add money to douche jar', notes: "He's cool!!!")

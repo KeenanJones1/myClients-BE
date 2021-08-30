@@ -1,5 +1,6 @@
+require 'jwt'
 class JsonWebToken
- JWT_SECRET = ENV["jwt_secret"]
+ JWT_SECRET = ENV["JWT_SECRET"]
 
  def self.encode(payload)
   JWT.encode(payload, JWT_SECRET)

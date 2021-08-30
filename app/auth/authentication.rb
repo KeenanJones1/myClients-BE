@@ -1,8 +1,9 @@
+require "json_web_token.rb"
 class Authentication
  def initialize(user_object)
-   @license_number = user_object[:license_number]
+   @email = user_object[:email]
    @password = user_object[:password]
-   @user = User.find_by(license_number: @license_number)
+   @user = User.find_by(email: @email)
  end
 
  def authenticate

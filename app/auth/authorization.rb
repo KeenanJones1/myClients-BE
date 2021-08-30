@@ -1,3 +1,5 @@
+require "json_web_token.rb"
+
 class Authorization
  def initialize(request)
    @token = request.headers[:Authorization].split(' ')[1]
