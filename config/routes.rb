@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post 'register', to: 'auth#create', as: '/register'
+  get 'login', to: 'auth#show', as: '/login'
+  resources :user, only: [:create, :show, :update]
+  resources :client, only: [:create, :show, :update, :destroy]
+  resources :my_client, only: [:show, :update]
+  resources :soap, only: [:create, :update, :destroy, :show, :index]
 end
