@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :user, only: [:create, :show, :update]
   resources :client, only: [:create, :show, :update, :destroy]
   resources :my_client, only: [:show, :update]
-  resources :soap, only: [:create, :update, :destroy, :show]
+  resources :soap, only: [:create, :update, :destroy, :show, :index]
 end
